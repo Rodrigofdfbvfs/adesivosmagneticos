@@ -85,6 +85,15 @@ function App() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(139,92,246,0.6),transparent_70%)] animate-pulse"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
+          <div className="mb-3">
+            <img 
+              src="https://digitalvante.com/wp-content/uploads/2025/08/width_800-12.webp"
+              alt="Logo DigitalVante"
+              className="max-w-[180px] sm:max-w-[220px] h-auto mx-auto animate-fadeIn"
+              loading="lazy"
+            />
+          </div>
+          
           <div className="mb-8 mt-16 inline-block">
             <div className="flex items-center justify-center space-x-2 bg-gradient-to-r from-purple-600 to-cyan-500 px-6 py-2 rounded-full text-sm font-bold">
               <Zap className="w-4 h-4" />

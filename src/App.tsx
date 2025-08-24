@@ -89,12 +89,12 @@ function App() {
             <img 
               src="https://digitalvante.com/wp-content/uploads/2025/08/width_800-12.webp"
               alt="Logo DigitalVante"
-              className="max-w-[180px] sm:max-w-[220px] h-auto mx-auto animate-fadeIn"
+              className="max-w-[240px] sm:max-w-[280px] md:max-w-[320px] h-auto mx-auto animate-fadeIn"
               loading="lazy"
             />
           </div>
           
-          <div className="mb-8 mt-16 inline-block">
+          <div className="mb-8 mt-6 inline-block">
             <div className="flex items-center justify-center space-x-2 bg-gradient-to-r from-purple-600 to-cyan-500 px-6 py-2 rounded-full text-sm font-bold">
               <Zap className="w-4 h-4" />
               <span>EXCLUSIVO - ÚLTIMAS VAGAS</span>

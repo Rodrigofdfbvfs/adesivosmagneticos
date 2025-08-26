@@ -571,7 +571,7 @@ function App() {
                   className="block w-full bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 hover:from-yellow-500 hover:via-amber-600 hover:to-yellow-700 py-5 rounded-xl text-xl font-black text-black transition-all duration-300 transform hover:scale-105 shadow-lg shadow-yellow-500/50 hover:shadow-xl hover:shadow-yellow-500/70 border-2 border-yellow-300/50 text-center"
                 >
                   QUERO SER PREMIUM AGORA
-                </a>
+                </button>
                 
                 <div className="text-center mt-4">
                   <p className="text-amber-300 text-sm font-semibold animate-pulse">

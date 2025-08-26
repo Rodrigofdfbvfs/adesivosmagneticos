@@ -22,6 +22,13 @@ function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [currentProof, setCurrentProof] = useState(0);
 
+  // Função para redirecionar mantendo os parâmetros de URL
+  const redirectToCheckout = (checkoutUrl: string) => {
+    const currentParams = window.location.search;
+    const finalUrl = checkoutUrl + (currentParams ? '&' + currentParams.substring(1) : '');
+    window.location.href = finalUrl;
+  };
+
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
@@ -460,14 +467,12 @@ function App() {
                   </div>
                 </div>
                 
-                <a 
-                  href="https://pay.adesivosmagneticos.shop/checkout-white-7080/?add-to-cart=7080"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button 
+                  onClick={() => redirectToCheckout('https://pay.adesivosmagneticos.shop/checkout-white-7080/?add-to-cart=7080')}
                   className="block w-full bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 py-4 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 text-center"
                 >
                   COMPRAR AGORA
-                </a>
+                </button>
               </div>
             </div>
             
@@ -561,10 +566,8 @@ function App() {
                   </div>
                 </div>
                 
-                <a 
-                  href="https://pay.adesivosmagneticos.shop/checkout-white-7085/?add-to-cart=7085"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button 
+                  onClick={() => redirectToCheckout('https://pay.adesivosmagneticos.shop/checkout-white-7085/?add-to-cart=7085')}
                   className="block w-full bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 hover:from-yellow-500 hover:via-amber-600 hover:to-yellow-700 py-5 rounded-xl text-xl font-black text-black transition-all duration-300 transform hover:scale-105 shadow-lg shadow-yellow-500/50 hover:shadow-xl hover:shadow-yellow-500/70 border-2 border-yellow-300/50 text-center"
                 >
                   QUERO SER PREMIUM AGORA

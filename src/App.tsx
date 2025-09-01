@@ -13,14 +13,11 @@ import {
   ChevronDown,
   ChevronUp,
   Play,
-  CheckCircle,
-  ChevronLeft,
-  ChevronRight
+  CheckCircle
 } from 'lucide-react';
 
 function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [currentProof, setCurrentProof] = useState(0);
 
   // Função para redirecionar mantendo os parâmetros de URL
   const redirectToCheckout = (checkoutUrl: string) => {
@@ -52,14 +49,6 @@ function App() {
       alt: "Prova social 3 - Feedback positivo"
     }
   ];
-
-  const nextProof = () => {
-    setCurrentProof((prev) => (prev + 1) % socialProofs.length);
-  };
-
-  const prevProof = () => {
-    setCurrentProof((prev) => (prev - 1 + socialProofs.length) % socialProofs.length);
-  };
 
   const faqs = [
     {
@@ -359,46 +348,18 @@ function App() {
             </p>
           </div>
           
-          <div className="relative max-w-2xl mx-auto">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-lg border border-green-500/20">
-              <div className="aspect-[1080/1350] relative">
-                <img 
-                  src={socialProofs[currentProof].image}
-                  alt={socialProofs[currentProof].alt}
-                  className="w-full h-full object-cover"
-                />
-                
-                {/* Navigation Arrows */}
-                <button
-                  onClick={prevProof}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                
-                <button
-                  onClick={nextProof}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {socialProofs.map((proof, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-lg border border-green-500/20 hover:border-green-500/40 transition-all duration-300 transform hover:scale-105">
+                <div className="aspect-[1080/1350] relative">
+                  <img 
+                    src={proof.image}
+                    alt={proof.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-            
-            {/* Dots Indicator */}
-            <div className="flex justify-center space-x-2 mt-6">
-              {socialProofs.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentProof(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentProof
-                      ? 'bg-gradient-to-r from-green-400 to-cyan-400'
-                      : 'bg-gray-600 hover:bg-gray-500'
-                  }`}
-                />
-              ))}
-            </div>
+            ))}
           </div>
           
           <div className="text-center mt-12">

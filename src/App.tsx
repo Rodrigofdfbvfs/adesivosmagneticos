@@ -458,7 +458,7 @@ function App() {
                   </div>
                   <div className="text-5xl font-black mb-2">
                     <span className="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-lg">
-                      R$ 24,99
+                      R$ 19,90
                     </span>
                   </div>
                   <p className="text-amber-200 font-semibold">Pagamento único - Acesso vitalício</p>

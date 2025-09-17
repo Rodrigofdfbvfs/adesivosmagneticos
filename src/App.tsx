@@ -403,7 +403,7 @@ function App() {
                 <div className="text-center mb-6">
                   <div className="text-5xl font-black mb-2">
                     <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                      R$ 9,99
+                      R$ 10,00
                     </span>
                   </div>
                   <p className="text-gray-400">Pagamento único</p>
